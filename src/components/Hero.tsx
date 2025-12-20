@@ -1,11 +1,17 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar } from 'lucide-react';
 import heroImage from '@/assets/log-press.jpeg';
+
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Strongman athlete performing log press at competition" className="w-full h-full object-cover object-center" />
+        <img
+          src={heroImage}
+          alt="Strongman athlete performing log press at competition"
+          className="w-full h-full object-cover object-center"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
       </div>
@@ -44,7 +50,20 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          
+          <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-border/30 animate-fade-up opacity-0 delay-400">
+            <div>
+              <p className="font-display text-3xl md:text-4xl font-bold text-primary">10+</p>
+              <p className="text-sm text-muted-foreground mt-1">Competitions</p>
+            </div>
+            <div>
+              <p className="font-display text-3xl md:text-4xl font-bold text-primary">5+</p>
+              <p className="text-sm text-muted-foreground mt-1">Years Coaching</p>
+            </div>
+            <div>
+              <p className="font-display text-3xl md:text-4xl font-bold text-primary">50+</p>
+              <p className="text-sm text-muted-foreground mt-1">Athletes Trained</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -54,6 +73,8 @@ const Hero = () => {
           <div className="w-1 h-3 bg-primary rounded-full mt-2" />
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
