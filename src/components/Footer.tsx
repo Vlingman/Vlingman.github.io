@@ -48,7 +48,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#referrals" className="text-muted-foreground hover:text-primary transition-colors">
-                  Referrals
+                  Testimonials
                 </a>
               </li>
             </ul>
@@ -59,12 +59,12 @@ const Footer = () => {
             <h4 className="font-display text-lg font-bold text-foreground mb-4">Get Started</h4>
             <ul className="space-y-2">
               <li>
-                <a href="https://docs.google.com/forms" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <a target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" href="https://forms.gle/cdERLCFkTc9ZumSYA">
                   Athlete Questionnaire
                 </a>
               </li>
               <li>
-                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <a target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" href="https://forms.gle/Kx7vKXs1CcEzNAN69">
                   Book Consultation
                 </a>
               </li>
