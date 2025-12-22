@@ -26,7 +26,7 @@ const stats = [{
   value: '10+',
   label: 'First Place Wins'
 }, {
-  value: '7+',
+  value: '8+',
   label: 'Years Competing'
 }, {
   value: '10+',
