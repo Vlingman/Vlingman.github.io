@@ -75,7 +75,7 @@ const Services = () => {
                 <img
                   src={atlasImage}
                   alt="Atlas stone training"
-                  className="w-full h-48 object-cover rounded-lg shadow-lg"
+                  className="w-full h-48 object-cover object-[center_30%] rounded-lg shadow-lg"
                 />
                 <div className="bg-primary/10 rounded-lg p-6 text-center">
                   <p className="font-display text-3xl font-bold text-primary">7+</p>
