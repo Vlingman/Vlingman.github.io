@@ -1,5 +1,6 @@
 import { Check, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const pricingPlans = [
   {
@@ -52,11 +53,19 @@ const pricingPlans = [
 ];
 
 const Pricing = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
+
   return (
     <section id="pricing" className="py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-700 ${
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <p className="font-display text-primary uppercase tracking-[0.3em] text-sm mb-4">
             Pricing
           </p>
@@ -71,15 +80,16 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div ref={cardsRef} className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-card rounded-lg p-8 border transition-all duration-300 ${
+              className={`relative bg-card rounded-lg p-8 border transition-all duration-700 hover-lift ${
                 plan.popular
                   ? 'border-primary shadow-[0_0_40px_hsl(24_95%_53%/0.2)] scale-105'
                   : 'border-border hover:border-primary/50'
-              }`}
+              } ${cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
               {/* Popular Badge */}
               {plan.popular && (

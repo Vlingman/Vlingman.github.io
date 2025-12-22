@@ -1,8 +1,11 @@
 import { Calendar, FileText, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import groupImage from '@/assets/competition-group.jpeg';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const CTA = () => {
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
+
   return (
     <section id="cta" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background Image */}
@@ -17,7 +20,12 @@ const CTA = () => {
       </div>
 
       <div className="container relative z-10 mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto text-center">
+        <div 
+          ref={contentRef}
+          className={`max-w-4xl mx-auto text-center transition-all duration-700 ${
+            contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           {/* Section Header */}
           <p className="font-display text-primary uppercase tracking-[0.3em] text-sm mb-4">
             Ready to Start?
@@ -32,8 +40,13 @@ const CTA = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button variant="hero" size="xl" asChild>
+          <div 
+            className={`flex flex-col sm:flex-row gap-4 justify-center mb-12 transition-all duration-700 ${
+              contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+            style={{ transitionDelay: '200ms' }}
+          >
+            <Button variant="hero" size="xl" asChild className="hover-lift">
               <a 
                 href="https://docs.google.com/forms" 
                 target="_blank" 
@@ -43,7 +56,7 @@ const CTA = () => {
                 Athlete Questionnaire
               </a>
             </Button>
-            <Button variant="heroOutline" size="xl" asChild>
+            <Button variant="heroOutline" size="xl" asChild className="hover-lift">
               <a 
                 href="https://calendly.com" 
                 target="_blank" 
@@ -56,7 +69,12 @@ const CTA = () => {
           </div>
 
           {/* Trust indicators */}
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground">
+          <div 
+            className={`flex flex-wrap justify-center gap-8 text-sm text-muted-foreground transition-all duration-700 ${
+              contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+            style={{ transitionDelay: '400ms' }}
+          >
             <span className="flex items-center gap-2">
               <ArrowRight className="w-4 h-4 text-primary" />
               No commitment required
