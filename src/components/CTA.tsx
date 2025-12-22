@@ -25,9 +25,8 @@ const CTA = () => {
             LET'S BUILD YOUR
             <span className="block text-primary">STRONGEST SELF</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-            Take the first step toward your strength goals. Fill out my athlete questionnaire 
-            or book a free 30-minute consultation to discuss your training.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 text-justify">
+            Take the first step toward your strength goals. Fill out my athlete questionnaire or book a free 30-minute consultation — this is your application to work with me. Once it's submitted, I’ll review your info and get back to you to see if we're a good fit to move forward together.
           </p>
 
           {/* CTA Buttons */}
