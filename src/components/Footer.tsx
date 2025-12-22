@@ -64,7 +64,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" href="https://forms.gle/Kx7vKXs1CcEzNAN69">
+                <a target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" href="https://forms.gle/BkNUft1t15iiBVWM9">
                   Book Consultation
                 </a>
               </li>
