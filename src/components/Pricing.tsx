@@ -132,10 +132,13 @@ const Pricing = () => {
               {/* CTA Button */}
               <Button
                 variant={plan.popular ? 'default' : 'outline'}
-                className="w-full"
+                className="w-full group hover:scale-[1.02] transition-transform duration-300"
                 asChild
               >
-                <a href="#cta">{plan.cta}</a>
+                <a href="#cta" className="flex items-center justify-center gap-2">
+                  {plan.cta}
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </a>
               </Button>
             </div>
           ))}

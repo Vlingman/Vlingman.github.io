@@ -78,12 +78,18 @@ const About = () => {
           <div ref={imagesRef} className={`relative transition-all duration-700 ${imagesVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <img alt="Victory celebration at strongman competition" className="w-full h-64 object-cover object-top rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-300" src="/lovable-uploads/cf366144-5c65-47de-b24b-94ed5e6ae0e5.jpg" />
-                <img src={podiumImage} alt="First place on podium" className="w-full h-40 object-cover rounded-lg shadow-lg hover:scale-[1.02] transition-transform duration-300" />
+                <div className="img-zoom rounded-lg shadow-xl overflow-hidden">
+                  <img alt="Victory celebration at strongman competition" className="w-full h-64 object-cover object-top" src="/lovable-uploads/cf366144-5c65-47de-b24b-94ed5e6ae0e5.jpg" />
+                </div>
+                <div className="img-zoom rounded-lg shadow-lg overflow-hidden">
+                  <img src={podiumImage} alt="First place on podium" className="w-full h-40 object-cover" />
+                </div>
               </div>
               <div className="pt-8">
-                <img src={logPressImage} alt="Log press world record" className="w-full h-72 object-cover rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-300" />
-                <div className="bg-primary/10 rounded-lg p-4 mt-4 text-center">
+                <div className="img-zoom rounded-lg shadow-xl overflow-hidden">
+                  <img src={logPressImage} alt="Log press world record" className="w-full h-72 object-cover" />
+                </div>
+                <div className="bg-primary/10 rounded-lg p-4 mt-4 text-center border-glow">
                   <p className="font-display text-sm font-bold text-primary uppercase tracking-wider">
                     Multiple European, Nordic & Swedish Records
                   </p>

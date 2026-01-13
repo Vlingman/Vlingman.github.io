@@ -33,15 +33,15 @@ const CTA = () => {
           <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-12 transition-all duration-700 ${contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{
           transitionDelay: '200ms'
         }}>
-            <Button variant="hero" size="xl" asChild className="hover-lift">
+            <Button variant="hero" size="xl" asChild className="hover-lift group">
               <a target="_blank" rel="noopener noreferrer" href="https://forms.gle/tEyy1wjvDCQ73Dee8">
-                <FileText className="mr-2 h-5 w-5" />
+                <FileText className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                 Athlete Questionnaire
               </a>
             </Button>
-            <Button variant="heroOutline" size="xl" asChild className="hover-lift">
+            <Button variant="heroOutline" size="xl" asChild className="hover-lift group">
               <a target="_blank" rel="noopener noreferrer" href="https://forms.gle/Kdiu6SZuNsnhBLdb6">
-                <Calendar className="mr-2 h-5 w-5" />
+                <Calendar className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                 Book Free Consultation
               </a>
             </Button>

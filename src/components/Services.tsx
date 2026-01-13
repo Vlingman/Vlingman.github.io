@@ -85,26 +85,30 @@ const Services = () => {
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <img 
-                  src={atlasImage} 
-                  alt="Atlas stone training" 
-                  className="w-full h-48 object-cover object-[center_30%] rounded-lg shadow-lg hover:scale-[1.02] transition-transform duration-300" 
-                />
-                <div className="bg-primary/10 rounded-lg p-6 text-center">
-                  <p className="font-display text-3xl font-bold text-primary">8+</p>
+                <div className="img-zoom rounded-lg shadow-lg overflow-hidden">
+                  <img 
+                    src={atlasImage} 
+                    alt="Atlas stone training" 
+                    className="w-full h-48 object-cover object-[center_30%]" 
+                  />
+                </div>
+                <div className="bg-primary/10 rounded-lg p-6 text-center border-glow group cursor-default">
+                  <p className="font-display text-3xl font-bold text-primary group-hover:scale-110 transition-transform duration-300">8+</p>
                   <p className="text-sm text-muted-foreground">Years Competition Experience</p>
                 </div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="bg-card rounded-lg p-6 text-center border border-border">
-                  <p className="font-display text-3xl font-bold text-foreground">10+</p>
+                <div className="bg-card rounded-lg p-6 text-center border border-border border-glow group cursor-default">
+                  <p className="font-display text-3xl font-bold text-foreground group-hover:scale-110 transition-transform duration-300">10+</p>
                   <p className="text-sm text-muted-foreground">Years Training Experience</p>
                 </div>
-                <img 
-                  src={deadliftImage} 
-                  alt="Deadlift training" 
-                  className="w-full h-48 object-cover rounded-lg shadow-lg hover:scale-[1.02] transition-transform duration-300" 
-                />
+                <div className="img-zoom rounded-lg shadow-lg overflow-hidden">
+                  <img 
+                    src={deadliftImage} 
+                    alt="Deadlift training" 
+                    className="w-full h-48 object-cover" 
+                  />
+                </div>
               </div>
             </div>
           </div>
