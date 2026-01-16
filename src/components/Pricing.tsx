@@ -1,4 +1,4 @@
-import { Check, Star } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
@@ -14,7 +14,6 @@ const pricingPlans = [
       'Exercise demo videos',
     ],
     cta: 'Get Started',
-    popular: false,
   },
   {
     name: 'Full 1-on-1 Coaching',
@@ -29,7 +28,7 @@ const pricingPlans = [
       'Unlimited adjustments',
     ],
     cta: 'Apply Now',
-    popular: true,
+    highlighted: true,
   },
   {
     name: 'Coaching + Nutrition',
@@ -43,7 +42,6 @@ const pricingPlans = [
       'Competition day nutrition',
     ],
     cta: 'Apply Now',
-    popular: false,
   },
 ];
 
@@ -70,31 +68,21 @@ const Pricing = () => {
           <div className="w-12 md:w-24 h-1 bg-primary mx-auto" />
         </div>
 
-        {/* Mobile: Horizontal scroll | Desktop: Grid */}
+        {/* Pricing Grid */}
         <div 
           ref={cardsRef} 
-          className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory md:snap-none -mx-4 px-4 md:mx-0 md:px-0"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto"
         >
           {pricingPlans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-card rounded-lg p-5 md:p-8 border transition-all duration-700 hover-lift flex-shrink-0 w-[280px] md:w-auto snap-center ${
-                plan.popular
-                  ? 'border-primary shadow-[0_0_30px_hsl(24_95%_53%/0.15)] md:scale-105'
+              className={`relative bg-card rounded-lg p-5 md:p-8 border transition-all duration-700 hover-lift ${
+                plan.highlighted
+                  ? 'border-primary/50 md:scale-105'
                   : 'border-border hover:border-primary/50'
               } ${cardsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              {/* Popular Badge */}
-              {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <div className="bg-primary text-primary-foreground px-3 py-0.5 rounded-full text-xs font-display uppercase tracking-wider flex items-center gap-1">
-                    <Star className="w-3 h-3 fill-current" />
-                    Popular
-                  </div>
-                </div>
-              )}
-
               {/* Plan Name */}
               <h3 className="font-display text-base md:text-xl font-bold text-foreground mb-1 md:mb-2">
                 {plan.name}
@@ -109,7 +97,7 @@ const Pricing = () => {
               </div>
 
               {/* Description */}
-              <p className="text-muted-foreground text-xs md:text-sm mb-4 md:mb-6 line-clamp-2">
+              <p className="text-muted-foreground text-xs md:text-sm mb-4 md:mb-6">
                 {plan.description}
               </p>
 
@@ -125,7 +113,7 @@ const Pricing = () => {
 
               {/* CTA Button */}
               <Button
-                variant={plan.popular ? 'default' : 'outline'}
+                variant={plan.highlighted ? 'default' : 'outline'}
                 size="sm"
                 className="w-full group hover:scale-[1.02] transition-transform duration-300 text-xs md:text-sm"
                 asChild
@@ -139,14 +127,9 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* Scroll hint for mobile */}
-        <p className="text-center text-xs text-muted-foreground mt-4 md:hidden">
-          Swipe to see all plans →
-        </p>
-
         {/* Note */}
-        <p className="text-center text-xs text-muted-foreground mt-4 md:mt-8 hidden md:block">
-          All prices in EUR. *At-competition coaching available based on location.
+        <p className="text-center text-xs text-muted-foreground mt-6 md:mt-8">
+          All prices in EUR. At-competition coaching available based on location.
         </p>
       </div>
     </section>
