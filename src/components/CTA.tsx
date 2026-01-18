@@ -58,7 +58,7 @@ const CTA = () => {
               </a>
             </Button>
             <Button variant="heroOutline" size="lg" asChild className="hover-lift group text-sm md:text-base">
-              <a target="_blank" rel="noopener noreferrer" href="https://forms.gle/Kdiu6SZuNsnhBLdb6">
+              <a target="_blank" rel="noopener noreferrer" href="https://cal.com/YOUR_USERNAME/consultation">
                 <Calendar className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
                 Free Consultation
               </a>

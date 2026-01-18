@@ -43,7 +43,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up opacity-0 delay-300">
             <Button variant="hero" size="xl" asChild className="group">
-              <a href="#cta">
+              <a href="https://cal.com/YOUR_USERNAME/consultation" target="_blank" rel="noopener noreferrer">
                 <Calendar className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                 Free Consultation
               </a>
