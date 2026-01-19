@@ -1,7 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "https://esm.sh/resend@2.0.0";
-
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+import { Resend } from "npm:resend@2.0.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -17,19 +15,69 @@ interface ConsultationRequest {
   message?: string;
 }
 
+const json = (body: unknown, status = 200) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: {
+      "Content-Type": "application/json",
+      ...corsHeaders,
+    },
+  });
+
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
-  try {
-    const { name, email, preferredDate, preferredTime, message }: ConsultationRequest = await req.json();
+  if (req.method !== "POST") {
+    return json({ error: "Method not allowed" }, 405);
+  }
 
-    console.log("Received consultation request:", { name, email, preferredDate, preferredTime });
+  const resendApiKey = Deno.env.get("RESEND_API_KEY");
+  if (!resendApiKey) {
+    console.error("Missing RESEND_API_KEY secret");
+    return json({ error: "Email service is not configured" }, 500);
+  }
+
+  const resend = new Resend(resendApiKey);
+
+  try {
+    const payload = (await req.json().catch(() => null)) as ConsultationRequest | null;
+
+    if (!payload) {
+      return json({ error: "Invalid JSON body" }, 400);
+    }
+
+    const { name, email, preferredDate, preferredTime, message } = payload;
+
+    if (!name || !email || !preferredDate || !preferredTime) {
+      return json(
+        {
+          error:
+            "Missing required fields: name, email, preferredDate, preferredTime",
+        },
+        400,
+      );
+    }
+
+    const notifyEmail = (Deno.env.get("CONSULTATION_NOTIFY_TO") || "").trim();
+    if (!notifyEmail) {
+      console.error("Missing CONSULTATION_NOTIFY_TO secret");
+      return json(
+        { error: "Notification email is not configured" },
+        500,
+      );
+    }
+
+    console.log("Received consultation request:", {
+      name,
+      email,
+      preferredDate,
+      preferredTime,
+    });
 
     // Send notification email to the coach
-    const notifyEmail = Deno.env.get("CONSULTATION_NOTIFY_TO") || "vabba.lingman@gmail.com";
     const notificationResponse = await resend.emails.send({
       from: "Consultation Requests <onboarding@resend.dev>",
       to: [notifyEmail],
@@ -59,11 +107,16 @@ const handler = async (req: Request): Promise<Response> => {
             <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">Message</td>
             <td style="padding: 10px; border: 1px solid #ddd;">${message}</td>
           </tr>
-          ` : ''}
+          ` : ""}
         </table>
         <p style="margin-top: 20px;">Please respond to confirm the consultation time.</p>
       `,
     });
+
+    if (notificationResponse?.error) {
+      console.error("Notification email failed:", notificationResponse);
+      throw new Error(notificationResponse.error.message);
+    }
 
     console.log("Notification email sent:", notificationResponse);
 
@@ -77,29 +130,28 @@ const handler = async (req: Request): Promise<Response> => {
         <p>I have received your request for a free 30-minute consultation.</p>
         <p><strong>Requested Date:</strong> ${preferredDate}</p>
         <p><strong>Requested Time:</strong> ${preferredTime}</p>
-        ${message ? `<p><strong>Your Message:</strong> ${message}</p>` : ''}
+        ${message ? `<p><strong>Your Message:</strong> ${message}</p>` : ""}
         <p>I will get back to you within 24 hours to confirm your consultation time.</p>
         <p>Best regards,<br>Your Strongman Coach</p>
       `,
     });
 
+    if (confirmationResponse?.error) {
+      console.error("Confirmation email failed:", confirmationResponse);
+      throw new Error(confirmationResponse.error.message);
+    }
+
     console.log("Confirmation email sent:", confirmationResponse);
 
-    return new Response(
-      JSON.stringify({ success: true, message: "Consultation request sent successfully" }),
-      {
-        status: 200,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
-      }
-    );
+    return json({ success: true, message: "Consultation request sent" }, 200);
   } catch (error: any) {
-    console.error("Error in send-consultation-request function:", error);
-    return new Response(
-      JSON.stringify({ error: error.message }),
+    console.error("Error in send-consultation-request:", error);
+    return json(
       {
-        status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
-      }
+        success: false,
+        error: error?.message ?? "Unknown error",
+      },
+      500,
     );
   }
 };

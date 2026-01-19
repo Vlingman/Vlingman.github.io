@@ -88,7 +88,7 @@ const BookConsultation = () => {
       console.error('Error submitting consultation request:', error);
       toast({
         title: "Something went wrong",
-        description: "Please try again or contact directly via email.",
+        description: error?.message || "Please try again or contact directly via email.",
         variant: "destructive"
       });
     } finally {
