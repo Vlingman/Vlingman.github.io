@@ -61,14 +61,9 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    const notifyEmail = (Deno.env.get("CONSULTATION_NOTIFY_TO") || "").trim();
-    if (!notifyEmail) {
-      console.error("Missing CONSULTATION_NOTIFY_TO secret");
-      return json(
-        { error: "Notification email is not configured" },
-        500,
-      );
-    }
+    // Use configured email or fallback
+    const notifyEmail = Deno.env.get("CONSULTATION_NOTIFY_TO")?.trim() || "vabba.lingman@gmail.com";
+    console.log("Sending notification to:", notifyEmail);
 
     console.log("Received consultation request:", {
       name,
