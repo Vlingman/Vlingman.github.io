@@ -23,9 +23,8 @@ const LanguageSelector = () => {
         aria-label="Switch to English"
         title="English"
       >
-        {/* Combined UK/US Flag */}
+        {/* Combined US/UK Flag */}
         <svg viewBox="0 0 32 24" className="w-full h-full">
-          {/* Left half - Union Jack */}
           <defs>
             <clipPath id="leftHalf">
               <rect x="0" y="0" width="16" height="24" />
@@ -35,23 +34,8 @@ const LanguageSelector = () => {
             </clipPath>
           </defs>
           
-          {/* UK Flag - Left Half */}
+          {/* US Flag - Left Half */}
           <g clipPath="url(#leftHalf)">
-            {/* Blue background */}
-            <rect width="32" height="24" fill="#012169" />
-            {/* White diagonals */}
-            <path d="M0,0 L32,24 M32,0 L0,24" stroke="#fff" strokeWidth="4" />
-            {/* Red diagonals */}
-            <path d="M0,0 L32,24" stroke="#C8102E" strokeWidth="2" />
-            <path d="M32,0 L0,24" stroke="#C8102E" strokeWidth="2" />
-            {/* White cross */}
-            <path d="M16,0 V24 M0,12 H32" stroke="#fff" strokeWidth="6" />
-            {/* Red cross */}
-            <path d="M16,0 V24 M0,12 H32" stroke="#C8102E" strokeWidth="3" />
-          </g>
-          
-          {/* US Flag - Right Half */}
-          <g clipPath="url(#rightHalf)">
             {/* Red and white stripes */}
             <rect width="32" height="24" fill="#B22234" />
             <rect y="1.85" width="32" height="1.85" fill="#fff" />
@@ -88,6 +72,21 @@ const LanguageSelector = () => {
               <circle cx="9.5" cy="10" r="0.6" />
               <circle cx="12" cy="10" r="0.6" />
             </g>
+          </g>
+          
+          {/* UK Flag - Right Half */}
+          <g clipPath="url(#rightHalf)">
+            {/* Blue background */}
+            <rect width="32" height="24" fill="#012169" />
+            {/* White diagonals */}
+            <path d="M0,0 L32,24 M32,0 L0,24" stroke="#fff" strokeWidth="4" />
+            {/* Red diagonals */}
+            <path d="M0,0 L32,24" stroke="#C8102E" strokeWidth="2" />
+            <path d="M32,0 L0,24" stroke="#C8102E" strokeWidth="2" />
+            {/* White cross */}
+            <path d="M16,0 V24 M0,12 H32" stroke="#fff" strokeWidth="6" />
+            {/* Red cross */}
+            <path d="M16,0 V24 M0,12 H32" stroke="#C8102E" strokeWidth="3" />
           </g>
           
           {/* Divider line */}
