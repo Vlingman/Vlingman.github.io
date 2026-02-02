@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { format } from 'date-fns';
 import { toZonedTime, fromZonedTime } from 'date-fns-tz';
 import { Clock, User, Mail, MessageSquare, ArrowLeft, Send, CalendarIcon, Globe } from 'lucide-react';
@@ -28,6 +29,7 @@ const SWEDISH_TIME_SLOTS = [
 ];
 
 const BookConsultation = () => {
+  const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
@@ -83,8 +85,8 @@ const BookConsultation = () => {
     
     if (!selectedDate) {
       toast({
-        title: "Please select a date",
-        description: "Choose your preferred consultation date from the calendar.",
+        title: t('booking.validation.selectDate'),
+        description: t('booking.validation.selectDateDesc'),
         variant: "destructive"
       });
       return;
@@ -92,8 +94,8 @@ const BookConsultation = () => {
 
     if (!formData.preferredTime) {
       toast({
-        title: "Please select a time",
-        description: "Choose your preferred consultation time.",
+        title: t('booking.validation.selectTime'),
+        description: t('booking.validation.selectTimeDesc'),
         variant: "destructive"
       });
       return;
@@ -120,8 +122,8 @@ const BookConsultation = () => {
       if (error) throw error;
 
       toast({
-        title: "Request Submitted!",
-        description: "I'll get back to you within 24 hours to confirm your consultation time.",
+        title: t('booking.success.title'),
+        description: t('booking.success.description'),
       });
 
       setFormData({
@@ -135,8 +137,8 @@ const BookConsultation = () => {
     } catch (error: any) {
       console.error('Error submitting consultation request:', error);
       toast({
-        title: "Something went wrong",
-        description: error?.message || "Please try again or contact directly via email.",
+        title: t('booking.error.title'),
+        description: error?.message || t('booking.error.description'),
         variant: "destructive"
       });
     } finally {
@@ -151,7 +153,7 @@ const BookConsultation = () => {
         <div className="container mx-auto px-4 py-4">
           <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
             <ArrowLeft className="w-4 h-4" />
-            Back to Home
+            {t('booking.backToHome')}
           </Link>
         </div>
       </div>
@@ -161,13 +163,13 @@ const BookConsultation = () => {
           {/* Page Header */}
           <div className="text-center mb-10">
             <p className="font-display text-primary uppercase tracking-[0.2em] text-sm mb-3">
-              Free Consultation
+              {t('booking.tagline')}
             </p>
             <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
-              BOOK YOUR <span className="text-primary">30-MINUTE</span> CALL
+              {t('booking.title')} <span className="text-primary">{t('booking.titleHighlight')}</span> {t('booking.titleEnd')}
             </h1>
             <p className="text-muted-foreground max-w-lg mx-auto">
-              Select your preferred date and time, and I'll confirm your consultation within 24 hours.
+              {t('booking.description')}
             </p>
           </div>
 
@@ -178,7 +180,7 @@ const BookConsultation = () => {
               <div className="bg-card border border-border rounded-xl p-6">
                 <div className="flex items-center gap-2 mb-4">
                   <CalendarIcon className="w-5 h-5 text-primary" />
-                  <h2 className="font-display text-lg font-semibold text-foreground">Select a Date</h2>
+                  <h2 className="font-display text-lg font-semibold text-foreground">{t('booking.selectDate')}</h2>
                 </div>
                 <div className="flex justify-center">
                   <Calendar
@@ -202,12 +204,12 @@ const BookConsultation = () => {
                 <div className="bg-card border border-border rounded-xl p-6">
                   <div className="flex items-center gap-2 mb-4">
                     <Clock className="w-5 h-5 text-primary" />
-                    <h2 className="font-display text-lg font-semibold text-foreground">Select a Time</h2>
+                    <h2 className="font-display text-lg font-semibold text-foreground">{t('booking.selectTime')}</h2>
                   </div>
                   {!isSwedishTimezone && (
                     <div className="flex items-center gap-2 mb-3 text-xs text-muted-foreground">
                       <Globe className="w-3 h-3" />
-                      <span>Times shown in your local timezone ({userTimezone})</span>
+                      <span>{t('booking.timezoneNote', { timezone: userTimezone })}</span>
                     </div>
                   )}
                   <div className="grid grid-cols-3 gap-2">
@@ -241,20 +243,20 @@ const BookConsultation = () => {
 
                 {/* Contact Details */}
                 <div className="bg-card border border-border rounded-xl p-6 space-y-4">
-                  <h2 className="font-display text-lg font-semibold text-foreground mb-4">Your Details</h2>
+                  <h2 className="font-display text-lg font-semibold text-foreground mb-4">{t('booking.yourDetails')}</h2>
                   
                   {/* Name */}
                   <div className="space-y-2">
                     <Label htmlFor="name" className="flex items-center gap-2">
                       <User className="w-4 h-4 text-primary" />
-                      Full Name
+                      {t('booking.fullName')}
                     </Label>
                     <Input
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Your name"
+                      placeholder={t('booking.namePlaceholder')}
                       required
                       className="bg-background"
                     />
@@ -264,7 +266,7 @@ const BookConsultation = () => {
                   <div className="space-y-2">
                     <Label htmlFor="email" className="flex items-center gap-2">
                       <Mail className="w-4 h-4 text-primary" />
-                      Email Address
+                      {t('booking.emailAddress')}
                     </Label>
                     <Input
                       id="email"
@@ -272,7 +274,7 @@ const BookConsultation = () => {
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="your@email.com"
+                      placeholder={t('booking.emailPlaceholder')}
                       required
                       className="bg-background"
                     />
@@ -282,14 +284,14 @@ const BookConsultation = () => {
                   <div className="space-y-2">
                     <Label htmlFor="message" className="flex items-center gap-2">
                       <MessageSquare className="w-4 h-4 text-primary" />
-                      Tell me about your goals (optional)
+                      {t('booking.goalsLabel')}
                     </Label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="What are you hoping to achieve? Any specific questions?"
+                      placeholder={t('booking.goalsPlaceholder')}
                       rows={3}
                       className="bg-background resize-none"
                     />
@@ -308,17 +310,17 @@ const BookConsultation = () => {
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
-                  'Submitting...'
+                  t('booking.submitting')
                 ) : (
                   <>
                     <Send className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                    Request Consultation
+                    {t('booking.submitButton')}
                   </>
                 )}
               </Button>
 
               <p className="text-center text-sm text-muted-foreground">
-                100% free · No commitment · I'll confirm within 24 hours
+                {t('booking.trustNote')}
               </p>
             </div>
           </form>
