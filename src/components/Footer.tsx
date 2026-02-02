@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { Instagram, Youtube, Mail, ArrowUp } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -103,24 +104,20 @@ const Footer = () => {
               <h4 className="font-display text-lg font-bold text-foreground mb-4">{t('footer.getStarted')}</h4>
               <ul className="space-y-2">
                 <li>
-                  <a 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline" 
-                    href="https://forms.gle/cdERLCFkTc9ZumSYA"
+                  <Link 
+                    to="/apply"
+                    className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline"
                   >
                     {t('footer.athleteQuestionnaire')}
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline" 
-                    href="https://forms.gle/BkNUft1t15iiBVWM9"
+                  <Link 
+                    to="/book"
+                    className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline"
                   >
                     {t('footer.bookConsultation')}
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a 

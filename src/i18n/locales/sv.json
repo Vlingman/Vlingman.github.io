@@ -114,8 +114,8 @@
     "tagline": "Redo att Börja?",
     "title1": "LÅT OSS BYGGA DIN",
     "title2": "STARKASTE VERSION",
-    "description": "Fyll i mitt formulär eller boka en gratis konsultation.",
-    "questionnaire": "Formulär",
+    "description": "Fyll i min ansökan eller boka en gratis konsultation.",
+    "questionnaire": "Ansök Nu",
     "freeConsultation": "Gratis Konsultation",
     "noCommitment": "Inget åtagande",
     "thirtyMinCall": "30-minuters samtal",
@@ -126,7 +126,7 @@
     "quickLinks": "Snabblänkar",
     "aboutMe": "Om Mig",
     "getStarted": "Kom Igång",
-    "athleteQuestionnaire": "Atletformulär",
+    "athleteQuestionnaire": "Atletansökan",
     "bookConsultation": "Boka Konsultation",
     "contactMe": "Kontakta Mig",
     "copyright": "© {{year}} ViktorLingmanCoaching. Alla rättigheter förbehållna.",
@@ -162,6 +162,83 @@
     "success": {
       "title": "Förfrågan Skickad!",
       "description": "Jag återkommer inom 24 timmar för att bekräfta din konsultationstid."
+    },
+    "error": {
+      "title": "Något gick fel",
+      "description": "Försök igen eller kontakta direkt via e-post."
+    }
+  },
+  "application": {
+    "backToHome": "Tillbaka till Startsidan",
+    "tagline": "Atletansökan",
+    "title": "ANSÖK OM COACHING",
+    "description": "Fyll i detta formulär för att ansöka om coaching. Jag granskar din ansökan och återkommer inom 48 timmar.",
+    "yes": "Ja",
+    "no": "Nej",
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "submit": "Skicka Ansökan",
+    "submitting": "Skickar...",
+    "steps": {
+      "step1": "Grundinfo",
+      "step2": "Bakgrund",
+      "step3": "Mål"
+    },
+    "step1": {
+      "title": "Grundläggande Information",
+      "fullName": "Fullständigt Namn",
+      "fullNamePlaceholder": "Ditt fullständiga namn",
+      "email": "E-postadress",
+      "emailPlaceholder": "din@email.com",
+      "age": "Ålder",
+      "agePlaceholder": "Din ålder",
+      "countryTimezone": "Land / Tidszon",
+      "countryTimezonePlaceholder": "t.ex. Sverige, GMT+1"
+    },
+    "step2": {
+      "title": "Atletisk Bakgrund",
+      "trainingLevel": "Hur skulle du beskriva din nuvarande träningsnivå?",
+      "levels": {
+        "beginner": "Nybörjare",
+        "intermediate": "Mellanliggande",
+        "advanced": "Avancerad"
+      },
+      "isCompetitive": "Tävlar du för närvarande?",
+      "trainingHistory": "Vad är din träningshistorik? (sport, lyft, etc.)",
+      "trainingHistoryPlaceholder": "Beskriv din träningsbakgrund...",
+      "hasWorkedWithCoach": "Arbetar du för närvarande med, eller har du arbetat med, en coach tidigare?",
+      "coachExperience": "Om ja, vad gillade eller ogillade du?",
+      "coachExperiencePlaceholder": "Dela din erfarenhet av tidigare coacher..."
+    },
+    "step3": {
+      "title": "Varför Du Är Här",
+      "whyWorkWithMe": "Varför vill du arbeta med mig specifikt?",
+      "whyWorkWithMePlaceholder": "Vad attraherade dig till min coaching?",
+      "shortTermGoals": "Vilka är dina kortsiktiga mål (3–6 månader)?",
+      "shortTermGoalsPlaceholder": "Vad vill du uppnå de kommande 3-6 månaderna?",
+      "longTermGoals": "Vilka är dina långsiktiga mål (1+ år)?",
+      "longTermGoalsPlaceholder": "Var ser du dig själv om ett år eller mer?",
+      "motivation": "Vad motiverar dig mest?",
+      "motivationPlaceholder": "Vad driver dig att träna och tävla?"
+    },
+    "gdprConsent": "Jag samtycker till att bli kontaktad och att min information behandlas för coachingändamål.",
+    "validation": {
+      "fullName": "Vänligen ange ditt fullständiga namn",
+      "email": "Vänligen ange en giltig e-postadress",
+      "age": "Vänligen ange en giltig ålder (13-100)",
+      "countryTimezone": "Vänligen ange ditt land/tidszon",
+      "trainingLevel": "Vänligen välj din träningsnivå",
+      "isCompetitive": "Vänligen ange om du tävlar",
+      "trainingHistory": "Vänligen beskriv din träningshistorik",
+      "hasWorkedWithCoach": "Vänligen ange om du arbetat med en coach",
+      "shortTermGoals": "Vänligen beskriv dina kortsiktiga mål",
+      "longTermGoals": "Vänligen beskriv dina långsiktiga mål",
+      "motivation": "Vänligen beskriv vad som motiverar dig",
+      "gdprConsent": "Du måste samtycka för att fortsätta"
+    },
+    "success": {
+      "title": "Tack!",
+      "description": "Din ansökan har tagits emot och kommer att granskas. Jag återkommer inom 48 timmar."
     },
     "error": {
       "title": "Något gick fel",
