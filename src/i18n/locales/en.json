@@ -114,8 +114,8 @@
     "tagline": "Ready to Start?",
     "title1": "LET'S BUILD YOUR",
     "title2": "STRONGEST SELF",
-    "description": "Fill out my questionnaire or book a free consultation.",
-    "questionnaire": "Questionnaire",
+    "description": "Fill out my application form or book a free consultation.",
+    "questionnaire": "Apply Now",
     "freeConsultation": "Free Consultation",
     "noCommitment": "No commitment",
     "thirtyMinCall": "30-minute call",
@@ -126,7 +126,7 @@
     "quickLinks": "Quick Links",
     "aboutMe": "About Me",
     "getStarted": "Get Started",
-    "athleteQuestionnaire": "Athlete Questionnaire",
+    "athleteQuestionnaire": "Athlete Application",
     "bookConsultation": "Book Consultation",
     "contactMe": "Contact Me",
     "copyright": "© {{year}} ViktorLingmanCoaching. All rights reserved.",
@@ -162,6 +162,83 @@
     "success": {
       "title": "Request Submitted!",
       "description": "I'll get back to you within 24 hours to confirm your consultation time."
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "Please try again or contact directly via email."
+    }
+  },
+  "application": {
+    "backToHome": "Back to Home",
+    "tagline": "Athlete Application",
+    "title": "APPLY FOR COACHING",
+    "description": "Complete this form to apply for coaching. I'll review your application and get back to you within 48 hours.",
+    "yes": "Yes",
+    "no": "No",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit Application",
+    "submitting": "Submitting...",
+    "steps": {
+      "step1": "Basic Info",
+      "step2": "Background",
+      "step3": "Goals"
+    },
+    "step1": {
+      "title": "Basic Information",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "age": "Age",
+      "agePlaceholder": "Your age",
+      "countryTimezone": "Country / Time Zone",
+      "countryTimezonePlaceholder": "e.g., Sweden, GMT+1"
+    },
+    "step2": {
+      "title": "Athletic Background",
+      "trainingLevel": "How would you describe your current training level?",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      },
+      "isCompetitive": "Are you currently competitive?",
+      "trainingHistory": "What is your training history? (sports, lifting, etc.)",
+      "trainingHistoryPlaceholder": "Describe your training background...",
+      "hasWorkedWithCoach": "Are you currently working with, or have you worked with, a coach before?",
+      "coachExperience": "If yes, what did you like or dislike?",
+      "coachExperiencePlaceholder": "Share your experience with previous coaches..."
+    },
+    "step3": {
+      "title": "Why You're Here",
+      "whyWorkWithMe": "Why do you want to work with me specifically?",
+      "whyWorkWithMePlaceholder": "What attracted you to my coaching?",
+      "shortTermGoals": "What are your short-term goals (3–6 months)?",
+      "shortTermGoalsPlaceholder": "What do you want to achieve in the next 3-6 months?",
+      "longTermGoals": "What are your long-term goals (1+ year)?",
+      "longTermGoalsPlaceholder": "Where do you see yourself in a year or more?",
+      "motivation": "What motivates you the most?",
+      "motivationPlaceholder": "What drives you to train and compete?"
+    },
+    "gdprConsent": "I consent to being contacted and to my information being processed for coaching purposes.",
+    "validation": {
+      "fullName": "Please enter your full name",
+      "email": "Please enter a valid email address",
+      "age": "Please enter a valid age (13-100)",
+      "countryTimezone": "Please enter your country/time zone",
+      "trainingLevel": "Please select your training level",
+      "isCompetitive": "Please indicate if you're competitive",
+      "trainingHistory": "Please describe your training history",
+      "hasWorkedWithCoach": "Please indicate if you've worked with a coach",
+      "shortTermGoals": "Please describe your short-term goals",
+      "longTermGoals": "Please describe your long-term goals",
+      "motivation": "Please describe what motivates you",
+      "gdprConsent": "You must consent to continue"
+    },
+    "success": {
+      "title": "Thank you!",
+      "description": "Your application has been received and will be reviewed. I'll get back to you within 48 hours."
     },
     "error": {
       "title": "Something went wrong",

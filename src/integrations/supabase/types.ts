@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      coaching_applications: {
+        Row: {
+          age: number
+          coach_experience: string | null
+          country_timezone: string
+          created_at: string
+          email: string
+          full_name: string
+          gdpr_consent: boolean
+          has_worked_with_coach: boolean
+          id: string
+          is_competitive: boolean
+          long_term_goals: string
+          motivation: string
+          short_term_goals: string
+          training_history: string
+          training_level: string
+          why_work_with_me: string | null
+        }
+        Insert: {
+          age: number
+          coach_experience?: string | null
+          country_timezone: string
+          created_at?: string
+          email: string
+          full_name: string
+          gdpr_consent?: boolean
+          has_worked_with_coach: boolean
+          id?: string
+          is_competitive: boolean
+          long_term_goals: string
+          motivation: string
+          short_term_goals: string
+          training_history: string
+          training_level: string
+          why_work_with_me?: string | null
+        }
+        Update: {
+          age?: number
+          coach_experience?: string | null
+          country_timezone?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          gdpr_consent?: boolean
+          has_worked_with_coach?: boolean
+          id?: string
+          is_competitive?: boolean
+          long_term_goals?: string
+          motivation?: string
+          short_term_goals?: string
+          training_history?: string
+          training_level?: string
+          why_work_with_me?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

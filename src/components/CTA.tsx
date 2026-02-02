@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { Calendar, FileText, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import groupImage from '@/assets/competition-group.jpeg';
@@ -51,10 +52,10 @@ const CTA = () => {
             style={{ transitionDelay: '200ms' }}
           >
             <Button variant="hero" size="lg" asChild className="hover-lift group text-sm md:text-base">
-              <a target="_blank" rel="noopener noreferrer" href="https://forms.gle/tEyy1wjvDCQ73Dee8">
+              <Link to="/apply">
                 <FileText className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
                 {t('cta.questionnaire')}
-              </a>
+              </Link>
             </Button>
             <Button variant="heroOutline" size="lg" asChild className="hover-lift group text-sm md:text-base">
               <a href="/book">
