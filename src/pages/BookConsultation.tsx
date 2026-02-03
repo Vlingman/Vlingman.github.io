@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { format } from 'date-fns';
+import { sv, enUS } from 'date-fns/locale';
 import { toZonedTime, fromZonedTime } from 'date-fns-tz';
 import { Clock, User, Mail, MessageSquare, ArrowLeft, Send, CalendarIcon, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -29,8 +30,11 @@ const SWEDISH_TIME_SLOTS = [
 ];
 
 const BookConsultation = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { toast } = useToast();
+  
+  // Get locale for date formatting
+  const dateLocale = i18n.language === 'sv' ? sv : enUS;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [formData, setFormData] = useState({
@@ -113,7 +117,7 @@ const BookConsultation = () => {
         body: {
           name: formData.name,
           email: formData.email,
-          preferredDate: format(selectedDate, 'EEEE, MMMM d, yyyy'),
+          preferredDate: format(selectedDate, 'EEEE, MMMM d, yyyy', { locale: dateLocale }),
           preferredTime: timeInfo,
           message: formData.message || undefined
         }
@@ -188,12 +192,13 @@ const BookConsultation = () => {
                     selected={selectedDate}
                     onSelect={setSelectedDate}
                     disabled={(date) => date < new Date() || date.getDay() === 0 || date.getDay() === 6}
+                    locale={dateLocale}
                     className="rounded-md border-0 pointer-events-auto"
                   />
                 </div>
                 {selectedDate && (
                   <p className="text-center mt-4 text-sm text-muted-foreground">
-                    Selected: <span className="text-primary font-medium">{format(selectedDate, 'EEEE, MMMM d, yyyy')}</span>
+                    {t('booking.selected')}: <span className="text-primary font-medium">{format(selectedDate, 'EEEE, MMMM d, yyyy', { locale: dateLocale })}</span>
                   </p>
                 )}
               </div>
