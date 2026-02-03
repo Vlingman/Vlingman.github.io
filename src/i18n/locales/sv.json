@@ -153,6 +153,7 @@
     "submitButton": "Begär Konsultation",
     "submitting": "Skickar...",
     "trustNote": "100% gratis · Inget åtagande · Jag bekräftar inom 24 timmar",
+    "selected": "Vald",
     "validation": {
       "selectDate": "Välj ett datum",
       "selectDateDesc": "Välj önskat konsultationsdatum från kalendern.",

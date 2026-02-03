@@ -153,6 +153,7 @@
     "submitButton": "Request Consultation",
     "submitting": "Submitting...",
     "trustNote": "100% free · No commitment · I'll confirm within 24 hours",
+    "selected": "Selected",
     "validation": {
       "selectDate": "Please select a date",
       "selectDateDesc": "Choose your preferred consultation date from the calendar.",
