@@ -107,7 +107,7 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const emailResponse = await resend.emails.send({
-      from: "Viktor Lingman Coaching <noreply@viktorlingmancoaching.com>",
+      from: "Viktor Lingman Coaching <onboarding@resend.dev>",
       to: ["vabba.lingman@gmail.com"],
       subject: `New Athlete Application: ${data.fullName}`,
       html: emailHtml,
