@@ -115,28 +115,32 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Notification email sent:", notificationResponse);
 
-    // Send confirmation email to the requester
-    const confirmationResponse = await resend.emails.send({
-      from: "Consultation <onboarding@resend.dev>",
-      to: [email],
-      subject: "Your Consultation Request Received!",
-      html: `
-        <h1>Thank you for your consultation request, ${name}!</h1>
-        <p>I have received your request for a free 30-minute consultation.</p>
-        <p><strong>Requested Date:</strong> ${preferredDate}</p>
-        <p><strong>Requested Time:</strong> ${preferredTime}</p>
-        ${message ? `<p><strong>Your Message:</strong> ${message}</p>` : ""}
-        <p>I will get back to you within 24 hours to confirm your consultation time.</p>
-        <p>Best regards,<br>Viktor Lingman</p>
-      `,
-    });
+    // Send confirmation email to the requester (non-blocking - may fail if domain not verified)
+    try {
+      const confirmationResponse = await resend.emails.send({
+        from: "Consultation <onboarding@resend.dev>",
+        to: [email],
+        subject: "Your Consultation Request Received!",
+        html: `
+          <h1>Thank you for your consultation request, ${name}!</h1>
+          <p>I have received your request for a free 30-minute consultation.</p>
+          <p><strong>Requested Date:</strong> ${preferredDate}</p>
+          <p><strong>Requested Time:</strong> ${preferredTime}</p>
+          ${message ? `<p><strong>Your Message:</strong> ${message}</p>` : ""}
+          <p>I will get back to you within 24 hours to confirm your consultation time.</p>
+          <p>Best regards,<br>Viktor Lingman</p>
+        `,
+      });
 
-    if (confirmationResponse?.error) {
-      console.error("Confirmation email failed:", confirmationResponse);
-      throw new Error(confirmationResponse.error.message);
+      if (confirmationResponse?.error) {
+        console.warn("Confirmation email failed (domain not verified):", confirmationResponse.error);
+      } else {
+        console.log("Confirmation email sent:", confirmationResponse);
+      }
+    } catch (confirmError) {
+      // Don't fail the request if confirmation email fails - notification to coach is the priority
+      console.warn("Could not send confirmation email:", confirmError);
     }
-
-    console.log("Confirmation email sent:", confirmationResponse);
 
     return json({ success: true, message: "Consultation request sent" }, 200);
   } catch (error: any) {
