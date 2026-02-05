@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { Trophy, Medal, Award, Globe } from 'lucide-react';
+import { Trophy, Medal, Award, Globe, Users, Target } from 'lucide-react';
 import podiumImage from '@/assets/podium.jpeg';
 import logPressImage from '@/assets/log-press.jpeg';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useCountUp } from '@/hooks/useCountUp';
 
 const About = () => {
   const { t } = useTranslation();
@@ -31,11 +32,18 @@ const About = () => {
   ];
 
   const stats = [
-    { value: '20+', label: t('about.stats.podiumFinishes') },
-    { value: '10+', label: t('about.stats.firstPlaceWins') },
-    { value: '8+', label: t('about.stats.yearsCompeting') },
-    { value: '10+', label: t('about.stats.yearsTraining') }
+    { value: 20, suffix: '+', label: t('about.stats.podiumFinishes'), icon: Trophy },
+    { value: 10, suffix: '+', label: t('about.stats.firstPlaceWins'), icon: Medal },
+    { value: 8, suffix: '+', label: t('about.stats.yearsCompeting'), icon: Target },
+    { value: 10, suffix: '+', label: t('about.stats.yearsTraining'), icon: Users }
   ];
+
+  // Animated counters for each stat
+  const counter1 = useCountUp({ end: stats[0].value, duration: 2000 });
+  const counter2 = useCountUp({ end: stats[1].value, duration: 2000 });
+  const counter3 = useCountUp({ end: stats[2].value, duration: 2000 });
+  const counter4 = useCountUp({ end: stats[3].value, duration: 2000 });
+  const counters = [counter1, counter2, counter3, counter4];
 
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation();
@@ -59,18 +67,25 @@ const About = () => {
           <div className="w-12 md:w-24 h-1 bg-primary mx-auto" />
         </div>
 
-        {/* Stats Bar */}
+        {/* Animated Stats Bar */}
         <div ref={statsRef} className="grid grid-cols-4 gap-2 md:gap-4 mb-8 md:mb-16 max-w-4xl mx-auto">
-          {stats.map((stat, index) => (
-            <div 
-              key={index} 
-              className={`bg-card rounded-lg p-2 md:p-6 text-center border border-border hover-lift hover-glow transition-all duration-700 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} 
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <p className="font-display text-lg md:text-4xl font-bold text-primary">{stat.value}</p>
-              <p className="text-[10px] md:text-sm text-muted-foreground mt-0.5 md:mt-1 leading-tight">{stat.label}</p>
-            </div>
-          ))}
+          {stats.map((stat, index) => {
+            const IconComponent = stat.icon;
+            return (
+              <div 
+                key={index}
+                ref={counters[index].ref}
+                className={`bg-card rounded-lg p-2 md:p-6 text-center border border-border hover-lift hover-glow transition-all duration-700 group ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} 
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <IconComponent className="w-4 h-4 md:w-6 md:h-6 text-primary mx-auto mb-1 md:mb-2 group-hover:scale-110 transition-transform duration-300" />
+                <p className="font-display text-lg md:text-4xl font-bold text-primary">
+                  {counters[index].count}{stat.suffix}
+                </p>
+                <p className="text-[10px] md:text-sm text-muted-foreground mt-0.5 md:mt-1 leading-tight">{stat.label}</p>
+              </div>
+            );
+          })}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
