@@ -18,6 +18,7 @@ interface FormData {
   email: string;
   age: string;
   countryTimezone: string;
+  instagram: string;
   // Step 2
   trainingLevel: string;
   isCompetitive: string;
@@ -38,6 +39,7 @@ const initialFormData: FormData = {
   email: "",
   age: "",
   countryTimezone: "",
+  instagram: "",
   trainingLevel: "",
   isCompetitive: "",
   trainingHistory: "",
@@ -148,6 +150,7 @@ export const AthleteApplication = () => {
           email: formData.email.trim(),
           age: parseInt(formData.age),
           countryTimezone: formData.countryTimezone.trim(),
+          instagram: formData.instagram.trim() || undefined,
           trainingLevel: formData.trainingLevel,
           isCompetitive: formData.isCompetitive === "yes",
           trainingHistory: formData.trainingHistory.trim(),
@@ -287,17 +290,28 @@ export const AthleteApplication = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="countryTimezone">{t("application.step1.countryTimezone")} *</Label>
-                  <Input
-                    id="countryTimezone"
-                    value={formData.countryTimezone}
-                    onChange={(e) => updateField("countryTimezone", e.target.value)}
-                    placeholder={t("application.step1.countryTimezonePlaceholder")}
-                    className="mt-1"
-                  />
-                </div>
-              </div>
-            </div>
+                   <Label htmlFor="countryTimezone">{t("application.step1.countryTimezone")} *</Label>
+                   <Input
+                     id="countryTimezone"
+                     value={formData.countryTimezone}
+                     onChange={(e) => updateField("countryTimezone", e.target.value)}
+                     placeholder={t("application.step1.countryTimezonePlaceholder")}
+                     className="mt-1"
+                   />
+                 </div>
+
+                 <div>
+                   <Label htmlFor="instagram">{t("application.step1.instagram")}</Label>
+                   <Input
+                     id="instagram"
+                     value={formData.instagram}
+                     onChange={(e) => updateField("instagram", e.target.value)}
+                     placeholder={t("application.step1.instagramPlaceholder")}
+                     className="mt-1"
+                   />
+                 </div>
+               </div>
+             </div>
           )}
 
           {currentStep === 2 && (

@@ -15,6 +15,7 @@ interface ApplicationData {
   email: string;
   age: number;
   countryTimezone: string;
+  instagram?: string;
   trainingLevel: string;
   isCompetitive: boolean;
   trainingHistory: string;
@@ -84,6 +85,7 @@ const handler = async (req: Request): Promise<Response> => {
         <li><strong>Email:</strong> ${data.email}</li>
         <li><strong>Age:</strong> ${data.age}</li>
         <li><strong>Country / Time Zone:</strong> ${data.countryTimezone}</li>
+        ${data.instagram ? `<li><strong>Instagram:</strong> ${data.instagram}</li>` : ""}
       </ul>
       
       <h2>Athletic Background</h2>
