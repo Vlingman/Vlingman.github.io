@@ -195,7 +195,9 @@
       "age": "Age",
       "agePlaceholder": "Your age",
       "countryTimezone": "Country / Time Zone",
-      "countryTimezonePlaceholder": "e.g., Sweden, GMT+1"
+      "countryTimezonePlaceholder": "e.g., Sweden, GMT+1",
+      "instagram": "Instagram Handle",
+      "instagramPlaceholder": "e.g., @viktor_lingman (optional)"
     },
     "step2": {
       "title": "Athletic Background",

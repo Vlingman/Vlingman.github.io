@@ -195,7 +195,9 @@
       "age": "Ålder",
       "agePlaceholder": "Din ålder",
       "countryTimezone": "Land / Tidszon",
-      "countryTimezonePlaceholder": "t.ex. Sverige, GMT+1"
+      "countryTimezonePlaceholder": "t.ex. Sverige, GMT+1",
+      "instagram": "Instagram-handtag",
+      "instagramPlaceholder": "t.ex. @viktor_lingman (valfritt)"
     },
     "step2": {
       "title": "Atletisk Bakgrund",
