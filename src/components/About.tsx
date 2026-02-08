@@ -39,10 +39,10 @@ const About = () => {
   ];
 
   // Animated counters for each stat
-  const counter1 = useCountUp({ end: stats[0].value, duration: 2000 });
-  const counter2 = useCountUp({ end: stats[1].value, duration: 2000 });
-  const counter3 = useCountUp({ end: stats[2].value, duration: 2000 });
-  const counter4 = useCountUp({ end: stats[3].value, duration: 2000 });
+  const counter1 = useCountUp({ end: stats[0].value, duration: 500 });
+  const counter2 = useCountUp({ end: stats[1].value, duration: 500 });
+  const counter3 = useCountUp({ end: stats[2].value, duration: 500 });
+  const counter4 = useCountUp({ end: stats[3].value, duration: 500 });
   const counters = [counter1, counter2, counter3, counter4];
 
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
