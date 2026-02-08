@@ -8,7 +8,6 @@ import Referrals from '@/components/Referrals';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import LoadingScreen from '@/components/LoadingScreen';
-import StickyMobileCTA from '@/components/StickyMobileCTA';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +24,6 @@ const Index = () => {
         <Referrals />
         <CTA />
         <Footer />
-        <StickyMobileCTA />
       </main>
     </>
   );
