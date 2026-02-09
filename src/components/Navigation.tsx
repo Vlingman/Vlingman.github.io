@@ -55,7 +55,7 @@ const Navigation = () => {
           <div className="md:hidden flex items-center gap-3">
             <LanguageSelector />
             <button 
-              className="text-foreground p-2" 
+              className="text-foreground p-3 -mr-2 touch-manipulation" 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
               aria-label="Toggle menu"
             >
@@ -72,7 +72,7 @@ const Navigation = () => {
                 <a 
                   key={link.href} 
                   href={link.href} 
-                  className="font-display text-lg uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors" 
+                  className="font-display text-lg uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors py-2 touch-manipulation" 
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

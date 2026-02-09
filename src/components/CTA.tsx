@@ -17,8 +17,9 @@ const CTA = () => {
       <div className="absolute inset-0">
         <img 
           src={groupImage} 
-          alt="Strongman competition podium with athletes" 
+          alt="Strongman competition group with athletes" 
           className="w-full h-[120%] object-cover object-center" 
+          loading="lazy"
           style={{ transform: `translateY(${parallaxOffset * 0.5}px)` }}
         />
         <div className="absolute inset-0 bg-background/90" />
