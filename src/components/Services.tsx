@@ -103,8 +103,9 @@ const Services = () => {
                 <div className="img-zoom rounded-lg shadow-lg overflow-hidden">
                   <img 
                     src={atlasImage} 
-                    alt="Atlas stone training" 
+                    alt="Atlas stone strongman training" 
                     className="w-full h-48 object-cover object-[center_30%]" 
+                    loading="lazy"
                   />
                 </div>
                 <div className="bg-primary/10 rounded-lg p-6 text-center border-glow group cursor-default">
@@ -120,8 +121,9 @@ const Services = () => {
                 <div className="img-zoom rounded-lg shadow-lg overflow-hidden">
                   <img 
                     src={deadliftImage} 
-                    alt="Deadlift training" 
+                    alt="Deadlift strength training" 
                     className="w-full h-48 object-cover" 
+                    loading="lazy"
                   />
                 </div>
               </div>

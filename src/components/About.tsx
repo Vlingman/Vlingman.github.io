@@ -98,18 +98,19 @@ const About = () => {
               <div className="space-y-4">
                 <div className="img-zoom rounded-lg shadow-xl overflow-hidden">
                   <img 
-                    alt="Victory celebration at strongman competition" 
+                    alt="Viktor Lingman victory celebration at strongman competition" 
                     className="w-full h-64 object-cover object-top" 
-                    src="/lovable-uploads/cf366144-5c65-47de-b24b-94ed5e6ae0e5.jpg" 
+                    loading="lazy"
+                    src="/lovable-uploads/cf366144-5c65-47de-b24b-94ed5e6ae0e5.jpg"
                   />
                 </div>
                 <div className="img-zoom rounded-lg shadow-lg overflow-hidden">
-                  <img src={podiumImage} alt="First place on podium" className="w-full h-40 object-cover" />
+                  <img src={podiumImage} alt="Viktor Lingman first place on podium" className="w-full h-40 object-cover" loading="lazy" />
                 </div>
               </div>
               <div className="pt-8">
                 <div className="img-zoom rounded-lg shadow-xl overflow-hidden">
-                  <img src={logPressImage} alt="Log press world record" className="w-full h-72 object-cover" />
+                  <img src={logPressImage} alt="Viktor Lingman log press world record attempt" className="w-full h-72 object-cover" loading="lazy" />
                 </div>
                 <div className="bg-primary/10 rounded-lg p-4 mt-4 text-center border-glow">
                   <p className="font-display text-sm font-bold text-primary uppercase tracking-wider">

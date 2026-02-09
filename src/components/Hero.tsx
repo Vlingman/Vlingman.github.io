@@ -13,9 +13,10 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img 
           src="/lovable-uploads/0b4f51b5-50f7-429b-8bbb-90c8eb89abbb.jpg" 
-          alt="Strongman athlete performing log press at competition" 
+          alt="Strongman athlete Viktor Lingman performing log press at competition" 
           className="w-full h-[120%] object-cover object-center scale-105 animate-[scaleIn_1.5s_ease-out_forwards]" 
           style={{ transform: `translateY(${parallaxOffset}px) scale(1.05)` }}
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
@@ -59,8 +60,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
+      {/* Scroll Indicator - hidden on mobile for more space */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float hidden sm:block">
         <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center hover:border-primary/50 transition-colors duration-300">
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-bounce" />
         </div>

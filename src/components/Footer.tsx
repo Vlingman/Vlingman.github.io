@@ -25,7 +25,7 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-6 right-4 md:bottom-8 md:right-8 z-50 w-10 h-10 md:w-12 md:h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 ${
+        className={`fixed bottom-6 right-4 md:bottom-8 md:right-8 z-50 w-12 h-12 md:w-12 md:h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 touch-manipulation ${
           showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
         aria-label="Scroll to top"
@@ -50,21 +50,21 @@ const Footer = () => {
                   href="https://www.instagram.com/viktor_lingman/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:scale-110 transition-all duration-300" 
+                  className="w-11 h-11 md:w-10 md:h-10 bg-secondary rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:scale-110 transition-all duration-300 touch-manipulation" 
                   aria-label="Instagram"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a 
                   href="#" 
-                  className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:scale-110 transition-all duration-300" 
+                  className="w-11 h-11 md:w-10 md:h-10 bg-secondary rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:scale-110 transition-all duration-300 touch-manipulation" 
                   aria-label="YouTube"
                 >
                   <Youtube className="w-5 h-5" />
                 </a>
                 <a 
                   href="mailto:vabba.lingman@gmail.com" 
-                  className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:scale-110 transition-all duration-300" 
+                  className="w-11 h-11 md:w-10 md:h-10 bg-secondary rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:scale-110 transition-all duration-300 touch-manipulation" 
                   aria-label="Email"
                 >
                   <Mail className="w-5 h-5" />
