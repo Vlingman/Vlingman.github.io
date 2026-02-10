@@ -11,7 +11,7 @@
     "title1": "BUILD",
     "title2": "CHAMPIONSHIP",
     "title3": "STRENGTH",
-    "description": "Train with a competitive strongman athlete. Custom programs, competition prep, and the guidance you need to reach your full potential.",
+    "description": "Train with me and benefit from the experience I’ve built through years of competing and structured training. You’ll get a personalized program, thoughtful competition preparation, and guidance throughout your journey toward your goals.",
     "freeConsultation": "Free Consultation",
     "whatIOffer": "WHAT I OFFER"
   },
@@ -19,10 +19,10 @@
     "tagline": "About Me",
     "title": "WORLD CHAMPION COACHING",
     "subtitle": "From World Champion to Your Coach",
-    "description1": "As the current World's Strongest Man U90, I've experienced firsthand what it takes to stand at the top of the world stage. From grueling training cycles to the pressure of competition day, I understand every aspect of what makes a champion.",
-    "description2": "With over 10 years of strongman training and 8+ years of competitive experience, I've accumulated more than 20 podium finishes including over 10 first place victories. I hold the U90 world record in log press along with multiple European, Nordic, and Swedish records.",
-    "description3": "My approach combines proven training methodologies with individualized programming. Whether you're preparing for your first competition or chasing a world title, I'll help you build the strength, technique, and mindset to succeed.",
-    "recordsNote": "Multiple European, Nordic & Swedish Records",
+    "description1": "As the current World's Strongest Man U90, I’ve learned firsthand what it takes to perform at the highest level. From demanding training cycles to handling the pressure on competition day, I understand the work and consistency required to reach that level.",
+    "description2": "With over 10 years of strongman training and more than 8 years of competition experience, I’ve earned 20+ podium finishes, including 10+ wins. I hold the U90 world record in log press along with several European, Nordic, and Swedish records.",
+    "description3": "My approach combines proven training principles with individualized programming. Whether you’re preparing for your first competition or aiming for a major title, I’ll help you build the strength, technique, and mindset needed to perform at your best."
+    "recordsNote": "World Champion, Multiple European, Nordic & Swedish Records",
     "stats": {
       "podiumFinishes": "Podium Finishes",
       "firstPlaceWins": "First Place Wins",
@@ -43,7 +43,7 @@
   "services": {
     "tagline": "What I Offer",
     "title": "COMPLETE COACHING",
-    "description": "Everything you need to become a stronger, more competitive athlete. From programming to competition day, I've got you covered.",
+    "description": "Everything you need to become a stronger, more competitive athlete. My coaching is built for those who are serious about improving — whether you’re already competing or preparing to step onto the platform for the first time. I work best with driven, ambitious athletes who want structure, accountability, and long-term progression. While my background is in strongman, the principles apply to strength development and competition readiness across strength sports. From intelligent programming to competition day strategy, I’ll guide you through the process with clarity and purpose.",
     "boxTitle": "Full Coaching Includes",
     "viewPricing": "View Pricing Plans",
     "yearsCompetition": "Years Competition Experience",
