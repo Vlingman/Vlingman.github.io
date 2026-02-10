@@ -20,7 +20,7 @@
     "title": "VÄRLDSMÄSTARCOACHING",
     "subtitle": "Från Världsmästare till Din Coach",
     "description1": "Som nuvarande World's Strongest Man U90 har jag upplevt på nära håll vad som krävs för att stå på toppen av världsscenen. Från hårda träningscykler till tävlingsdagens press förstår jag varje aspekt av vad som gör en mästare.",
-    "description2": "Med över 10 års strongman-träning och 8+ års tävlingserfarenhet har jag samlat mer än 20 pallplaceringar inklusive över 10 förstaplaceringar. Jag har U90 världsrekordet i stocklyft tillsammans med flera europeiska, nordiska och svenska rekord.",
+    "description2": "Med över 10 års strongman-träning och 8+ års tävlingserfarenhet har jag samlat mer än 20 pallplaceringar inklusive över 10 förstaplaceringar. Jag har u90 världsrekordet i stocklyft tillsammans med flera europeiska, nordiska och svenska rekord.",
     "description3": "Min metod kombinerar beprövade träningsmetoder med individualiserad programmering. Oavsett om du förbereder dig för din första tävling eller jagar en världstitel, hjälper jag dig att bygga styrka, teknik och mentalitet för att lyckas.",
     "recordsNote": "Flera Europeiska, Nordiska & Svenska Rekord",
     "stats": {
@@ -31,13 +31,13 @@
     },
     "accomplishments": {
       "worldChampion": "Världsmästare",
-      "worldChampionDesc": "World's Strongest Man U90",
+      "worldChampionDesc": "World's Strongest Man u90",
       "nationalChampion": "4x Svensk Mästare",
-      "nationalChampionDesc": "Sveriges Starkaste Man U90",
+      "nationalChampionDesc": "Sveriges Starkaste Man u90",
       "nordicChampion": "Nordisk Mästare",
-      "nordicChampionDesc": "Nordens Starkaste U90",
+      "nordicChampionDesc": "Nordens Starkaste u90",
       "worldRecordHolder": "Världsrekordinnehavare",
-      "worldRecordHolderDesc": "U90 Stocklyft"
+      "worldRecordHolderDesc": "u90 Stocklyft"
     }
   },
   "services": {
@@ -57,7 +57,7 @@
       "messaging": "Direktmeddelandestöd",
       "adjustments": "Regelbundna programjusteringar",
       "competitionPrep": "Tävlingsförberedelser & peaking",
-      "waterCutting": "Vattenklippning för invägning",
+      "waterCutting": "Vätsketömning för invägning",
       "weightClass": "Viktklasshantering",
       "recovery": "Återhämtning & avlastningsprogram",
       "atCompetition": "Coaching på plats (när möjligt)"
@@ -87,7 +87,7 @@
           "customProgram": "Skräddarsytt periodiserat program",
           "videoReviews": "Veckovisa videogenomgångar",
           "messaging": "Direktmeddelandeåtkomst",
-          "competitionPrep": "Tävlingsförberedelser & vattenklipp",
+          "competitionPrep": "Tävlingsförberedelser & vätsketömning",
           "unlimitedAdjustments": "Obegränsade justeringar"
         }
       },
