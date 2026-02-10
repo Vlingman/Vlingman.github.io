@@ -19,8 +19,8 @@
     "tagline": "About Me",
     "title": "WORLD CHAMPION COACHING",
     "subtitle": "From World Champion to Your Coach",
-    "description1": "As the current World's Strongest Man U90, I've experienced firsthand what it takes to stand at the top of the world stage. From grueling training cycles to the pressure of competition day, I understand every aspect of what makes a champion.",
-    "description2": "With over 10 years of strongman training and 8+ years of competitive experience, I've accumulated more than 20 podium finishes including over 10 first place victories. I hold the U90 world record in log press along with multiple European, Nordic, and Swedish records.",
+    "description1": "As the current World's Strongest Man u90, I've experienced firsthand what it takes to stand at the top of the world stage. From grueling training cycles to the pressure of competition day, I understand every aspect of what makes a champion.",
+    "description2": "With over 10 years of strongman training and 8+ years of competitive experience, I've accumulated more than 20 podium finishes including over 10 first place victories. I hold the u90 world record in log press along with multiple European, Nordic, and Swedish records.",
     "description3": "My approach combines proven training methodologies with individualized programming. Whether you're preparing for your first competition or chasing a world title, I'll help you build the strength, technique, and mindset to succeed.",
     "recordsNote": "Multiple European, Nordic & Swedish Records",
     "stats": {
@@ -31,13 +31,13 @@
     },
     "accomplishments": {
       "worldChampion": "World Champion",
-      "worldChampionDesc": "World's Strongest Man U90",
+      "worldChampionDesc": "World's Strongest Man u90",
       "nationalChampion": "4x National Champion",
-      "nationalChampionDesc": "Sweden's Strongest Man U90",
+      "nationalChampionDesc": "Sweden's Strongest Man u90",
       "nordicChampion": "Nordic Champion",
-      "nordicChampionDesc": "Nordic's Strongest U90",
+      "nordicChampionDesc": "Nordic's Strongest u90",
       "worldRecordHolder": "World Record Holder",
-      "worldRecordHolderDesc": "U90 Log Press"
+      "worldRecordHolderDesc": "u90 Log Press"
     }
   },
   "services": {
