@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -8,9 +8,14 @@ import Referrals from '@/components/Referrals';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import LoadingScreen from '@/components/LoadingScreen';
+import { trackPageView } from '@/lib/analytics';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    trackPageView('/');
+  }, []);
 
   return (
     <>
