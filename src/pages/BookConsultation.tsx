@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { format } from 'date-fns';
 import { sv, enUS } from 'date-fns/locale';
@@ -13,6 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { cn } from '@/lib/utils';
+import { trackPageView } from '@/lib/analytics';
 
 const SWEDISH_TIMEZONE = 'Europe/Stockholm';
 
@@ -32,6 +33,10 @@ const SWEDISH_TIME_SLOTS = [
 const BookConsultation = () => {
   const { t, i18n } = useTranslation();
   const { toast } = useToast();
+
+  useEffect(() => {
+    trackPageView('/book');
+  }, []);
   
   // Get locale for date formatting
   const dateLocale = i18n.language === 'sv' ? sv : enUS;

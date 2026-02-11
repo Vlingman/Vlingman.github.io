@@ -1,12 +1,18 @@
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import { AthleteApplication } from "@/components/AthleteApplication";
+import { trackPageView } from "@/lib/analytics";
 
 const Apply = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    trackPageView('/apply');
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import groupImage from '@/assets/competition-group.jpeg';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParallax } from '@/hooks/useParallax';
+import { trackClick } from '@/lib/analytics';
 
 const CTA = () => {
   const { t } = useTranslation();
@@ -52,13 +53,13 @@ const CTA = () => {
             }`} 
             style={{ transitionDelay: '200ms' }}
           >
-            <Button variant="hero" size="lg" asChild className="hover-lift group text-sm md:text-base">
+            <Button variant="hero" size="lg" asChild className="hover-lift group text-sm md:text-base" onClick={() => trackClick('apply_now_cta')}>
               <Link to="/apply">
                 <FileText className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
                 {t('cta.questionnaire')}
               </Link>
             </Button>
-            <Button variant="heroOutline" size="lg" asChild className="hover-lift group text-sm md:text-base">
+            <Button variant="heroOutline" size="lg" asChild className="hover-lift group text-sm md:text-base" onClick={() => trackClick('book_consultation_cta')}>
               <a href="/book">
                 <Calendar className="mr-2 h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
                 {t('cta.freeConsultation')}

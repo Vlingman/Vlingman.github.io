@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { useParallax } from '@/hooks/useParallax';
+import { trackClick } from '@/lib/analytics';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -44,7 +45,7 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up opacity-0 delay-300">
-            <Button variant="hero" size="xl" asChild className="group">
+            <Button variant="hero" size="xl" asChild className="group" onClick={() => trackClick('book_consultation_hero')}>
               <a href="/book">
                 <Calendar className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                 {t('hero.freeConsultation')}
