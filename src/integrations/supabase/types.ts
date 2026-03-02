@@ -100,7 +100,16 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      daily_analytics: {
+        Row: {
+          event_date: string | null
+          event_name: string | null
+          event_type: string | null
+          page_path: string | null
+          total_count: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never
