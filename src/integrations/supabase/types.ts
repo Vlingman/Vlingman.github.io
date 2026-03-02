@@ -98,18 +98,36 @@ export type Database = {
         }
         Relationships: []
       }
-    }
-    Views: {
       daily_analytics: {
         Row: {
-          event_date: string | null
-          event_name: string | null
-          event_type: string | null
+          event_date: string
+          event_name: string
+          event_type: string
+          id: string
           page_path: string | null
-          total_count: number | null
+          total_count: number
+        }
+        Insert: {
+          event_date: string
+          event_name: string
+          event_type: string
+          id?: string
+          page_path?: string | null
+          total_count?: number
+        }
+        Update: {
+          event_date?: string
+          event_name?: string
+          event_type?: string
+          id?: string
+          page_path?: string | null
+          total_count?: number
         }
         Relationships: []
       }
+    }
+    Views: {
+      [_ in never]: never
     }
     Functions: {
       [_ in never]: never
