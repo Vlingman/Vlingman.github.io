@@ -47,13 +47,13 @@ const Hero = () => {
 
           <div className="flex flex-col gap-4 animate-fade-up opacity-0 delay-300 max-w-xl">
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" asChild className="group flex-1" onClick={() => trackClick('apply_now_hero')}>
+              <Button variant="hero" size="xl" asChild className="group w-full sm:flex-1" onClick={() => trackClick('apply_now_hero')}>
                 <Link to="/apply">
                   <FileText className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                   {t('hero.applyNow', 'Apply Now')}
                 </Link>
               </Button>
-              <Button variant="hero" size="xl" asChild className="group flex-1" onClick={() => trackClick('book_consultation_hero')}>
+              <Button variant="hero" size="xl" asChild className="group w-full sm:flex-1" onClick={() => trackClick('book_consultation_hero')}>
                 <a href="/book">
                   <Calendar className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                   {t('hero.freeConsultation')}
