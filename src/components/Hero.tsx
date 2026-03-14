@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, FileText } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useParallax } from '@/hooks/useParallax';
 import { trackClick } from '@/lib/analytics';
 
@@ -44,14 +45,22 @@ const Hero = () => {
             {t('hero.description')}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-up opacity-0 delay-300">
-            <Button variant="hero" size="xl" asChild className="group" onClick={() => trackClick('book_consultation_hero')}>
-              <a href="/book">
-                <Calendar className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                {t('hero.freeConsultation')}
-              </a>
-            </Button>
-            <Button variant="heroOutline" size="xl" asChild className="group">
+          <div className="flex flex-col gap-4 animate-fade-up opacity-0 delay-300 max-w-xl">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="hero" size="xl" asChild className="group flex-1" onClick={() => trackClick('apply_now_hero')}>
+                <Link to="/apply">
+                  <FileText className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                  {t('hero.applyNow', 'Apply Now')}
+                </Link>
+              </Button>
+              <Button variant="hero" size="xl" asChild className="group flex-1" onClick={() => trackClick('book_consultation_hero')}>
+                <a href="/book">
+                  <Calendar className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                  {t('hero.freeConsultation')}
+                </a>
+              </Button>
+            </div>
+            <Button variant="heroOutline" size="xl" asChild className="group w-full">
               <a href="#services">
                 {t('hero.whatIOffer')}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
