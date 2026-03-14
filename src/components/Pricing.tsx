@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
@@ -120,10 +121,10 @@ const Pricing = () => {
                 className="w-full group hover:scale-[1.02] transition-transform duration-300 text-xs md:text-sm"
                 asChild
               >
-                <a href="#cta" className="flex items-center justify-center gap-1">
+                <Link to="/apply" className="flex items-center justify-center gap-1">
                   {plan.cta}
                   <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                </a>
+                </Link>
               </Button>
             </div>
           ))}
