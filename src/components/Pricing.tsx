@@ -121,7 +121,7 @@ const Pricing = () => {
                 className="w-full group hover:scale-[1.02] transition-transform duration-300 text-xs md:text-sm"
                 asChild
               >
-                <a href="#cta" className="flex items-center justify-center gap-1">
+                <Link to="/apply" className="flex items-center justify-center gap-1">
                   {plan.cta}
                   <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </a>
