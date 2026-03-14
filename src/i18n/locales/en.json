@@ -11,9 +11,17 @@
     "title1": "BUILD",
     "title2": "CHAMPIONSHIP",
     "title3": "STRENGTH",
-    "description": "Train with me and benefit from the experience I’ve built through years of competing and structured training. You’ll get a personalized program, thoughtful competition preparation, and guidance throughout your journey toward your goals.",
+    "description": "Train with me and benefit from the experience I've built through years of competing and structured training. You'll get a personalized program, thoughtful competition preparation, and guidance throughout your journey toward your goals.",
     "freeConsultation": "Free Consultation",
-    "whatIOffer": "WHAT I OFFER"
+    "whatIOffer": "WHAT I OFFER",
+    "questions": {
+      "intro": "Looking to",
+      "q1": "get stronger?",
+      "q2": "Lose weight?",
+      "q3": "Improve strongman technique?",
+      "q4": "Get in better shape?",
+      "q5": "Become more competitive?"
+    }
   },
   "about": {
     "tagline": "About Me",
