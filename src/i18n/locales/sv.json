@@ -13,7 +13,15 @@
     "title3": "STYRKA",
     "description": "Träna tillsammans med mig och ta del av den erfarenhet jag själv byggt genom år av tävling och strukturerad träning. Du får ett personligt upplägg, genomtänkt tävlingsförberedelse och stöd hela vägen mot dina mål.",
     "freeConsultation": "Gratis Konsultation",
-    "whatIOffer": "VAD JAG ERBJUDER"
+    "whatIOffer": "VAD JAG ERBJUDER",
+    "questions": {
+      "intro": "Vill du",
+      "q1": "bli starkare?",
+      "q2": "Gå ner i vikt?",
+      "q3": "Förbättra strongman-teknik?",
+      "q4": "Komma i bättre form?",
+      "q5": "Bli mer tävlingsinriktad?"
+    }
   },
   "about": {
     "tagline": "Om Mig",
