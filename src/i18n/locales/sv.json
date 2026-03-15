@@ -78,11 +78,11 @@
     "perMonth": "/månad",
     "plans": {
       "programOnly": {
-        "name": "Endast Program",
-        "description": "Skräddarsydd programmering levereras månadsvis.",
+        "name": "Program eller Kost",
+        "description": "Välj antingen ett personligt träningsprogram ELLER personlig kostplanering.",
         "cta": "Kom Igång",
         "features": {
-          "personalizedProgram": "Personligt träningsprogram",
+          "programOrNutrition": "Personligt träningsprogram ELLER kostplanering",
           "monthlyUpdates": "Månatliga programuppdateringar",
           "demoVideos": "Övningsdemovideor"
         }

@@ -78,11 +78,11 @@
     "perMonth": "/month",
     "plans": {
       "programOnly": {
-        "name": "Program Only",
-        "description": "Custom programming delivered monthly.",
+        "name": "Program or Nutrition",
+        "description": "Choose either a personal training program OR personal nutrition planning.",
         "cta": "Get Started",
         "features": {
-          "personalizedProgram": "Personalized training program",
+          "programOrNutrition": "Personal training program OR nutrition planning",
           "monthlyUpdates": "Monthly program updates",
           "demoVideos": "Exercise demo videos"
         }
