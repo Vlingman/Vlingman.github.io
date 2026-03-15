@@ -257,5 +257,58 @@
       "title": "Något gick fel",
       "description": "Försök igen eller kontakta direkt via e-post."
     }
+  },
+  "programs": {
+    "backToHome": "Tillbaka till Startsidan",
+    "backToPrograms": "Tillbaka till Program",
+    "tagline": "Träningsprogram",
+    "title": "FÄRDIGA PROGRAM",
+    "description": "Färdiga träningsprogram designade av en världsmästare. Välj ett program och börja bygga styrka idag.",
+    "comingSoon": "Kommer Snart",
+    "weeks": "veckor",
+    "viewDetails": "Visa Detaljer",
+    "oneTimePurchase": "Engångsköp",
+    "customNote": "Letar du efter något mer personligt? Ansök om 1-on-1 coaching istället.",
+    "applyForCoaching": "Ansök om Coaching",
+    "notifyNote": "Detta program håller på att färdigställas. Kolla tillbaka snart eller ansök om coaching under tiden.",
+    "items": {
+      "beginner-strongman": {
+        "name": "Nybörjar Strongman",
+        "shortDesc": "Ditt första steg in i strongman-träning med strukturerad progression.",
+        "description": "Ett omfattande 12-veckorsprogram utformat för att introducera dig till strongman-träning. Täcker alla grundläggande rörelser, bygger en solid styrkegrund och förbereder dig för din första tävling.",
+        "features": [
+          "Komplett 12-veckors periodiserat program",
+          "Strongman-gren teknikguider",
+          "Progressionsspårning",
+          "Övningsdemovideor",
+          "Uppvärmning & mobilitetsrutiner"
+        ]
+      },
+      "competition-prep": {
+        "name": "Tävlingsförberedelse",
+        "shortDesc": "Toppa formen inför din nästa tävling med beprövade metoder.",
+        "description": "Ett 16-veckors tävlingsförberedande program byggt på samma metoder jag använder för att förbereda mig inför VM. Inkluderar toppningsstrategier, grenspecifik träning och avtrappningsprotokoll.",
+        "features": [
+          "16-veckors tävlingstoppningscykel",
+          "Grenspecifik programmering",
+          "Avtrappning & avlastningsprotokoll",
+          "Tävlingsdagens spelplansmall",
+          "Vätsketömningsriktlinjer",
+          "Mental förberedelseguide"
+        ]
+      },
+      "strength-hypertrophy": {
+        "name": "Styrka & Storlek",
+        "shortDesc": "Bygg rå styrka och muskelmassa med beprövade metoder.",
+        "description": "Ett 8-veckors styrke- och hypertrofiblock fokuserat på att bygga rå kraft och muskelmassa. Perfekt som ett off-season-program eller för alla som vill bli större och starkare.",
+        "features": [
+          "8-veckors styrke- & hypertrofiblock",
+          "Progressiv överbelastningsprogrammering",
+          "Tillbehörsövningsmallar",
+          "Återhämtning & kostriktlinjer",
+          "Övningsdemovideor"
+        ]
+      }
+    }
   }
 }
