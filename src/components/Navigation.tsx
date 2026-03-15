@@ -79,16 +79,27 @@ const Navigation = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border py-6 shadow-lg">
             <div className="flex flex-col gap-4 px-4">
-              {navLinks.map(link => (
-                <a 
-                  key={link.href} 
-                  href={link.href} 
-                  className="font-display text-lg uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors py-2 touch-manipulation" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map(link => 
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="font-display text-lg uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors py-2 touch-manipulation"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a 
+                    key={link.href} 
+                    href={link.href} 
+                    className="font-display text-lg uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors py-2 touch-manipulation" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
               <Button asChild className="mt-4">
                 <a href="#cta" onClick={() => setIsMobileMenuOpen(false)}>
                   {t('nav.bookConsultation')}
