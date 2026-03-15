@@ -16,7 +16,7 @@ const Pricing = () => {
       period: t('pricing.perMonth'),
       description: t('pricing.plans.programOnly.description'),
       features: [
-        t('pricing.plans.programOnly.features.personalizedProgram'),
+        t('pricing.plans.programOnly.features.programOrNutrition'),
         t('pricing.plans.programOnly.features.monthlyUpdates'),
         t('pricing.plans.programOnly.features.demoVideos'),
       ],
