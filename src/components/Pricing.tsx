@@ -148,6 +148,8 @@ const Pricing = () => {
             </Button>
           </div>
         </div>
+      </div>
+    </section>
   );
 };
 
