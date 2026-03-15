@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Check } from 'lucide-react';
+import { Check, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
@@ -130,10 +130,24 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* Note */}
-        <p className="text-center text-xs text-muted-foreground mt-6 md:mt-8">
-          {t('pricing.note')}
-        </p>
+        {/* Note & Programs Link */}
+        <div className="text-center mt-6 md:mt-8 space-y-4">
+          <p className="text-xs text-muted-foreground">
+            {t('pricing.note')}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <p className="text-sm text-muted-foreground">
+              {t('pricing.programsNote', 'Looking for a standalone program?')}
+            </p>
+            <Button variant="outline" size="sm" asChild className="group">
+              <Link to="/programs">
+                <ShoppingBag className="mr-2 h-4 w-4" />
+                {t('pricing.browsePrograms', 'Browse Programs')}
+                <span className="ml-1 group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </Link>
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );

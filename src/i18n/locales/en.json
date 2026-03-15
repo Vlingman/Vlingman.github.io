@@ -3,6 +3,7 @@
     "about": "About",
     "services": "Services",
     "pricing": "Pricing",
+    "programs": "Programs",
     "testimonials": "Testimonials",
     "bookConsultation": "Book Consultation"
   },
@@ -255,6 +256,59 @@
     "error": {
       "title": "Something went wrong",
       "description": "Please try again or contact directly via email."
+    }
+  },
+  "programs": {
+    "backToHome": "Back to Home",
+    "backToPrograms": "Back to Programs",
+    "tagline": "Training Programs",
+    "title": "PRE-MADE PROGRAMS",
+    "description": "Ready-to-follow training programs designed by a World Champion. Pick a program and start building strength today.",
+    "comingSoon": "Coming Soon",
+    "weeks": "weeks",
+    "viewDetails": "View Details",
+    "oneTimePurchase": "One-time purchase",
+    "customNote": "Looking for something more personalized? Apply for 1-on-1 coaching instead.",
+    "applyForCoaching": "Apply for Coaching",
+    "notifyNote": "This program is currently being finalized. Check back soon or apply for coaching in the meantime.",
+    "items": {
+      "beginner-strongman": {
+        "name": "Beginner Strongman",
+        "shortDesc": "Your first step into strongman training with structured progression.",
+        "description": "A comprehensive 12-week program designed to introduce you to strongman training. Covers all the fundamental movements, builds a solid strength base, and prepares you for your first competition.",
+        "features": [
+          "Full 12-week periodized program",
+          "Strongman event technique guides",
+          "Progression tracking sheets",
+          "Exercise demonstration videos",
+          "Warm-up & mobility routines"
+        ]
+      },
+      "competition-prep": {
+        "name": "Competition Prep",
+        "shortDesc": "Peak for your next competition with a proven peaking protocol.",
+        "description": "A 16-week competition preparation program built from the same methods I use to prepare for world-level competitions. Includes peaking strategies, event-specific training, and taper protocols.",
+        "features": [
+          "16-week competition peaking cycle",
+          "Event-specific programming",
+          "Taper & deload protocols",
+          "Competition day game plan template",
+          "Water cut guidelines",
+          "Mental preparation guide"
+        ]
+      },
+      "strength-hypertrophy": {
+        "name": "Strength & Size",
+        "shortDesc": "Build raw strength and muscle mass with proven methods.",
+        "description": "An 8-week strength and hypertrophy block focused on building raw power and muscle mass. Perfect as an off-season program or for anyone looking to get bigger and stronger.",
+        "features": [
+          "8-week strength & hypertrophy block",
+          "Progressive overload programming",
+          "Accessory work templates",
+          "Recovery & nutrition guidelines",
+          "Exercise demonstration videos"
+        ]
+      }
     }
   }
 }
