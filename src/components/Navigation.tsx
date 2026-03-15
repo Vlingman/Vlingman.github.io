@@ -37,15 +37,25 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map(link => (
-              <a 
-                key={link.href} 
-                href={link.href} 
-                className="font-display text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-all duration-300 link-underline py-1"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map(link => 
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="font-display text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-all duration-300 link-underline py-1"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a 
+                  key={link.href} 
+                  href={link.href} 
+                  className="font-display text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-all duration-300 link-underline py-1"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
             <Button asChild size="sm" className="hover:scale-105 transition-transform duration-300">
               <a href="#cta">{t('nav.bookConsultation')}</a>
             </Button>
