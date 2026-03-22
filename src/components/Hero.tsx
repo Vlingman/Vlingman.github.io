@@ -41,7 +41,7 @@ const Hero = () => {
             {t('hero.title3')}
           </h1>
           
-          <p className="text-base md:text-xl text-muted-foreground max-w-xl mb-6 md:mb-8 animate-fade-up opacity-0 delay-200">
+          <p className="text-sm md:text-xl text-muted-foreground max-w-xl mb-4 md:mb-8 animate-fade-up opacity-0 delay-200 hidden sm:block">
             {t('hero.description')}
           </p>
 
