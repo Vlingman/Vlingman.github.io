@@ -11,11 +11,11 @@ const LanguageSelector = () => {
   const currentLang = i18n.language;
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex flex-col items-center gap-1 md:flex-row">
       {/* English Flag (Half British/Half American) */}
       <button
         onClick={() => changeLanguage('en')}
-        className={`relative w-8 h-6 rounded overflow-hidden border-2 transition-all duration-200 ${
+        className={`relative h-5 w-7 overflow-hidden rounded border-2 transition-all duration-200 md:h-6 md:w-8 ${
           currentLang === 'en' 
             ? 'border-primary shadow-md scale-110' 
             : 'border-transparent opacity-60 hover:opacity-100 hover:scale-105'
@@ -97,7 +97,7 @@ const LanguageSelector = () => {
       {/* Swedish Flag */}
       <button
         onClick={() => changeLanguage('sv')}
-        className={`relative w-8 h-6 rounded overflow-hidden border-2 transition-all duration-200 ${
+        className={`relative h-5 w-7 overflow-hidden rounded border-2 transition-all duration-200 md:h-6 md:w-8 ${
           currentLang === 'sv' 
             ? 'border-primary shadow-md scale-110' 
             : 'border-transparent opacity-60 hover:opacity-100 hover:scale-105'
