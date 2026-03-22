@@ -72,7 +72,7 @@ const Hero = () => {
                 </a>
               </Button>
             </div>
-            <Button variant="heroOutline" size="xl" asChild className="group w-full">
+            <Button variant="heroOutline" size="lg" asChild className="group w-full">
               <a href="#services">
                 {t('hero.whatIOffer')}
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
