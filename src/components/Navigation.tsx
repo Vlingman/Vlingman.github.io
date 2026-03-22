@@ -91,17 +91,6 @@ const Navigation = () => {
             </div>
           </div>
 
-          <div className="mt-3 md:hidden">
-            <div className="flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {navLinks.map((link) =>
-                renderNavItem(
-                  link,
-                  'shrink-0 rounded-full border border-border bg-secondary/70 px-3 py-2 font-display text-[0.7rem] uppercase tracking-[0.18em] text-foreground/90 transition-colors duration-300 hover:border-primary/50 hover:text-primary',
-                  () => setIsMobileMenuOpen(false),
-                ),
-              )}
-            </div>
-          </div>
         </div>
 
         {/* Mobile Menu */}
