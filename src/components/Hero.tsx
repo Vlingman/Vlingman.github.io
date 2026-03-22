@@ -29,36 +29,41 @@ const Hero = () => {
       <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-primary/3 rounded-full blur-3xl animate-pulse-subtle delay-500" />
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 md:px-6 pt-20">
+      <div className="container relative z-10 mx-auto px-4 pt-28 md:px-6 md:pt-20">
         <div className="max-w-3xl">
           <p className="font-display text-primary uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-base mb-3 md:mb-4 animate-fade-up opacity-0">
             {t('hero.tagline')}
           </p>
           
-          <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-4 md:mb-6 animate-fade-up opacity-0 delay-100">
+          <h1 className="font-display text-[2.35rem] leading-[0.95] sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 md:mb-6 animate-fade-up opacity-0 delay-100">
             {t('hero.title1')}
             <span className="block text-gradient-animated">{t('hero.title2')}</span>
             {t('hero.title3')}
           </h1>
           
-          <p className="text-sm md:text-xl text-muted-foreground max-w-xl mb-4 md:mb-8 animate-fade-up opacity-0 delay-200 hidden sm:block">
+          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:mb-8 md:text-xl animate-fade-up opacity-0 delay-200">
             {t('hero.description')}
           </p>
 
           {/* Aspirational Questions */}
-          <div className="mb-4 md:mb-8 animate-fade-up opacity-0 delay-250 max-w-xl">
-            <p className="text-xs md:text-base text-foreground/70 leading-relaxed">
-              {t('hero.questions.intro')}{' '}
-              <span className="text-primary font-semibold">{t('hero.questions.q1')}</span>{' '}
-              <span className="text-primary font-semibold">{t('hero.questions.q2')}</span>{' '}
-              <span className="text-primary font-semibold hidden sm:inline">{t('hero.questions.q3')}</span>{' '}
-              <span className="text-primary font-semibold">{t('hero.questions.q4')}</span>{' '}
-              <span className="text-primary font-semibold hidden sm:inline">{t('hero.questions.q5')}</span>
+          <div className="max-w-xl animate-fade-up opacity-0 delay-250">
+            <p className="text-sm leading-relaxed text-foreground/75 md:text-base">
+              {t('hero.questions.intro')}
             </p>
+            <div className="mt-3 flex flex-wrap gap-2 md:gap-3">
+              {[t('hero.questions.q1'), t('hero.questions.q2'), t('hero.questions.q3'), t('hero.questions.q4'), t('hero.questions.q5')].map((question) => (
+                <span
+                  key={question}
+                  className="rounded-full border border-border bg-secondary/80 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-primary md:text-sm"
+                >
+                  {question}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <div className="flex flex-col gap-3 md:gap-4 animate-fade-up opacity-0 delay-300 max-w-xl">
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+          <div className="mt-5 flex max-w-xl flex-col gap-3 md:mt-8 md:gap-4 animate-fade-up opacity-0 delay-300">
+            <div className="flex flex-col gap-3 sm:flex-row md:gap-4">
               <Button variant="hero" size="lg" asChild className="group w-full sm:flex-1" onClick={() => trackClick('apply_now_hero')}>
                 <Link to="/apply">
                   <FileText className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
