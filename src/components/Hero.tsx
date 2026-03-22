@@ -46,20 +46,20 @@ const Hero = () => {
           </p>
 
           {/* Aspirational Questions */}
-          <div className="mb-6 md:mb-8 animate-fade-up opacity-0 delay-250 max-w-xl">
-            <p className="text-sm md:text-base text-foreground/70 leading-relaxed">
+          <div className="mb-4 md:mb-8 animate-fade-up opacity-0 delay-250 max-w-xl">
+            <p className="text-xs md:text-base text-foreground/70 leading-relaxed">
               {t('hero.questions.intro')}{' '}
               <span className="text-primary font-semibold">{t('hero.questions.q1')}</span>{' '}
               <span className="text-primary font-semibold">{t('hero.questions.q2')}</span>{' '}
-              <span className="text-primary font-semibold">{t('hero.questions.q3')}</span>{' '}
+              <span className="text-primary font-semibold hidden sm:inline">{t('hero.questions.q3')}</span>{' '}
               <span className="text-primary font-semibold">{t('hero.questions.q4')}</span>{' '}
-              <span className="text-primary font-semibold">{t('hero.questions.q5')}</span>
+              <span className="text-primary font-semibold hidden sm:inline">{t('hero.questions.q5')}</span>
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 animate-fade-up opacity-0 delay-300 max-w-xl">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" asChild className="group w-full sm:flex-1" onClick={() => trackClick('apply_now_hero')}>
+          <div className="flex flex-col gap-3 md:gap-4 animate-fade-up opacity-0 delay-300 max-w-xl">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <Button variant="hero" size="lg" asChild className="group w-full sm:flex-1" onClick={() => trackClick('apply_now_hero')}>
                 <Link to="/apply">
                   <FileText className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                   {t('hero.applyNow', 'Apply Now')}
