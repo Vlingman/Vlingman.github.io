@@ -65,7 +65,7 @@ const Hero = () => {
                   {t('hero.applyNow', 'Apply Now')}
                 </Link>
               </Button>
-              <Button variant="hero" size="xl" asChild className="group w-full sm:flex-1" onClick={() => trackClick('book_consultation_hero')}>
+              <Button variant="hero" size="lg" asChild className="group w-full sm:flex-1" onClick={() => trackClick('book_consultation_hero')}>
                 <a href="/book">
                   <Calendar className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                   {t('hero.freeConsultation')}
