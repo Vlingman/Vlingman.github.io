@@ -115,7 +115,7 @@ const Navigation = () => {
                 ),
               )}
               <Button asChild className="mt-4">
-                <a href="#cta" onClick={() => setIsMobileMenuOpen(false)}>
+                <a href="#cta" onClick={(e) => handleHashClick(e, '#cta', () => setIsMobileMenuOpen(false))}>
                   {t('nav.bookConsultation')}
                 </a>
               </Button>
