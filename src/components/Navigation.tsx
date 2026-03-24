@@ -3,13 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LanguageSelector from '@/components/LanguageSelector';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 const Navigation = () => {
   const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
     { href: '#about', label: t('nav.about') },
@@ -27,6 +29,14 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleHashClick = (e: React.MouseEvent, hash: string, callback?: () => void) => {
+    if (location.pathname !== '/') {
+      e.preventDefault();
+      navigate('/' + hash);
+    }
+    callback?.();
+  };
+
   const renderNavItem = (
     link: (typeof navLinks)[number],
     className: string,
@@ -41,7 +51,7 @@ const Navigation = () => {
     }
 
     return (
-      <a key={link.href} href={link.href} className={className} onClick={onClick}>
+      <a key={link.href} href={link.href} className={className} onClick={(e) => handleHashClick(e, link.href, onClick)}>
         {link.label}
       </a>
     );
