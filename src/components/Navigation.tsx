@@ -82,7 +82,7 @@ const Navigation = () => {
                 ),
               )}
               <Button asChild size="sm" className="hover:scale-105 transition-transform duration-300">
-                <a href="#cta">{t('nav.bookConsultation')}</a>
+                <a href="#cta" onClick={(e) => handleHashClick(e, '#cta')}>{t('nav.bookConsultation')}</a>
               </Button>
               <LanguageSelector />
             </div>
