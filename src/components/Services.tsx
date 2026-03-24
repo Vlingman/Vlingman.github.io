@@ -49,6 +49,18 @@ const Services = () => {
           </p>
         </div>
 
+        {/* Programs Button */}
+        <div className={`text-center mb-8 md:mb-12 transition-all duration-700 ${
+          headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          <Button asChild variant="outline" className="hover-lift">
+            <a href="/programs">
+              {t('nav.programs')}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Services List */}
           <div 
@@ -57,22 +69,13 @@ const Services = () => {
               listVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}
           >
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                 <Zap className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-display text-2xl font-bold text-foreground">
                 {t('services.boxTitle')}
               </h3>
-            </div>
-
-            <div className="mb-6">
-              <Button asChild variant="outline" size="sm" className="hover-lift">
-                <a href="/programs">
-                  {t('nav.programs')}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
             </div>
 
             <ul className="grid sm:grid-cols-2 gap-4">
